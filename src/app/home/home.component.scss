@@ -64,8 +64,10 @@
   }
 }
 
+
 .bg {
   @apply pf-bg-slate-900;
+  position: relative;
 }
 
 .portfolio-joystick {

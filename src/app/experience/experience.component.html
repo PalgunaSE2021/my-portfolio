@@ -1,0 +1,28 @@
+<section id="experience">
+  <span
+    class="pf-text-24-px pf-font-serif pf-font-semibold pf-text-about-text-color pf-flex project-heading"
+    >Experience</span
+  >
+  <div class="experience-container">
+    <div
+      class="accordion"
+      *ngFor="let exp of experiences; let i = index; trackBy: trackByIndex"
+    >
+      <div class="accordion-header" (click)="toggleExpand(i)">
+        <div>
+          <h3>{{ exp.role }}</h3>
+          <span class="company">{{ exp.company }}</span>
+        </div>
+        <div class="duration">{{ exp.duration }}</div>
+        <div class="arrow" [class.expanded]="exp.expanded">▼</div>
+      </div>
+
+      <div class="accordion-body" *ngIf="exp.expanded">
+        <p class="pf-text-about-text-color">{{ exp.description }}</p>
+        <div class="tech-stack">
+          <span *ngFor="let tech of exp.technologies">{{ tech }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
